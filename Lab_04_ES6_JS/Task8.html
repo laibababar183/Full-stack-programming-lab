@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 8 — Quiz Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Task8.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ===== START SCREEN ===== -->
+    <div id="startScreen" class="screen">
+      <span class="lab-tag">Home Task 08</span>
+      <div class="start-icon">🧠</div>
+      <h1>jQuery Quiz</h1>
+      <p class="subtitle">Test your knowledge of jQuery and Web Development.<br>8 questions — one at a time.</p>
+      <button id="startBtn" class="primary-btn">Start Quiz</button>
+    </div>
+
+    <!-- ===== QUIZ SCREEN ===== -->
+    <div id="quizScreen" class="screen" style="display:none;">
+
+      <!-- Progress Bar -->
+      <div class="progress-wrap">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <span class="progress-text" id="progressText">Question 1 of 8</span>
+      </div>
+
+      <!-- Question Card -->
+      <div class="question-card">
+        <div class="q-number" id="qNumber">Q1</div>
+        <p class="question-text" id="questionText">Question goes here</p>
+      </div>
+
+      <!-- Options -->
+      <div class="options-grid" id="optionsGrid"></div>
+
+      <!-- Feedback message -->
+      <div class="feedback" id="feedback"></div>
+
+      <!-- Next Button -->
+      <button id="nextBtn" class="primary-btn" style="display:none;">Next Question →</button>
+
+    </div>
+
+    <!-- ===== RESULT SCREEN ===== -->
+    <div id="resultScreen" class="screen" style="display:none;">
+      <div class="score-ring" id="scoreRing">
+        <span id="scoreText">0/8</span>
+      </div>
+      <h2 id="resultTitle">Well Done!</h2>
+      <p  id="resultMsg">Keep practicing!</p>
+      <div class="result-stats" id="resultStats"></div>
+      <button id="restartBtn" class="primary-btn">Play Again</button>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="Task8.js"></script>
+</body>
+</html>

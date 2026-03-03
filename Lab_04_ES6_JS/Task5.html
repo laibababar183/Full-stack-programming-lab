@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 5 — Chained Style Editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Task5.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <span class="lab-tag">Home Task 05</span>
+      <h1>Chained Style Editor</h1>
+      <p class="subtitle">Apply multiple styles at once using jQuery chaining</p>
+    </header>
+
+    <!-- Text Block to be styled -->
+    <div class="text-card">
+      <p id="styledText">
+        This is the text block. Use the buttons below to change its
+        font size, color, background, and style. All changes are applied
+        using jQuery method chaining!
+      </p>
+    </div>
+
+    <!-- Control Buttons -->
+    <div class="controls">
+
+      <div class="control-group">
+        <span class="group-label">Font Size</span>
+        <div class="btn-row">
+          <button class="ctrl-btn" id="fontSmall">Small</button>
+          <button class="ctrl-btn" id="fontMedium">Medium</button>
+          <button class="ctrl-btn" id="fontLarge">Large</button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <span class="group-label">Text Color</span>
+        <div class="btn-row">
+          <button class="ctrl-btn color-btn" id="colorWhite"  style="background:#fff;color:#000;">White</button>
+          <button class="ctrl-btn color-btn" id="colorYellow" style="background:#f5c542;color:#000;">Yellow</button>
+          <button class="ctrl-btn color-btn" id="colorCyan"   style="background:#00e5ff;color:#000;">Cyan</button>
+          <button class="ctrl-btn color-btn" id="colorPink"   style="background:#ff4d9e;color:#fff;">Pink</button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <span class="group-label">Background</span>
+        <div class="btn-row">
+          <button class="ctrl-btn" id="bgDark">Dark</button>
+          <button class="ctrl-btn" id="bgPurple">Purple</button>
+          <button class="ctrl-btn" id="bgTeal">Teal</button>
+          <button class="ctrl-btn" id="bgOrange">Orange</button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <span class="group-label">Toggle Style</span>
+        <div class="btn-row">
+          <button class="ctrl-btn toggle-btn" id="toggleBold">Bold</button>
+          <button class="ctrl-btn toggle-btn" id="toggleItalic">Italic</button>
+          <button class="ctrl-btn toggle-btn" id="toggleUnderline">Underline</button>
+          <button class="ctrl-btn toggle-btn" id="toggleShadow">Shadow</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Reset Button -->
+    <button id="resetBtn">↺ Reset All Styles</button>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="Task5.js"></script>
+</body>
+</html>

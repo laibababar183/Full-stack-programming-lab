@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 4 — Tabbed Content</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Task4.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <span class="lab-tag">Lab Task 04</span>
+      <h1>Tabbed Content</h1>
+      <p class="subtitle">Click any tab — content switches with smooth scroll</p>
+    </header>
+
+    <!-- Tab Buttons -->
+    <div class="tab-nav">
+      <button class="tab-btn active" data-tab="html">HTML</button>
+      <button class="tab-btn" data-tab="css">CSS</button>
+      <button class="tab-btn" data-tab="javascript">JavaScript</button>
+      <button class="tab-btn" data-tab="jquery">jQuery</button>
+      <button class="tab-btn" data-tab="ajax">Ajax</button>
+    </div>
+
+    <!-- Tab Content Panels -->
+    <div id="content-area">
+
+      <div class="tab-panel active" id="html">
+        <div class="panel-icon">🌐</div>
+        <h2>HTML — HyperText Markup Language</h2>
+        <p>HTML is the backbone of every webpage. It defines the structure and meaning of web content using elements like headings, paragraphs, links, images, forms, and tables.</p>
+        <ul>
+          <li>Defines page structure with semantic tags</li>
+          <li>Links stylesheets and scripts to the page</li>
+          <li>Supports multimedia: images, video, audio</li>
+          <li>Forms allow user data collection</li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" id="css">
+        <div class="panel-icon">🎨</div>
+        <h2>CSS — Cascading Style Sheets</h2>
+        <p>CSS controls the visual presentation of HTML elements. It handles colors, fonts, spacing, layout, and animations — making pages beautiful and responsive.</p>
+        <ul>
+          <li>Selectors target specific HTML elements</li>
+          <li>Flexbox and Grid for modern layouts</li>
+          <li>Media queries for mobile responsiveness</li>
+          <li>Animations and transitions for motion</li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" id="javascript">
+        <div class="panel-icon">⚡</div>
+        <h2>JavaScript — Dynamic Scripting</h2>
+        <p>JavaScript brings interactivity to webpages. It can manipulate the DOM, respond to user events, fetch data from servers, and create dynamic experiences.</p>
+        <ul>
+          <li>DOM manipulation and event handling</li>
+          <li>Variables, functions, arrays, objects</li>
+          <li>ES6+ features: arrow functions, promises</li>
+          <li>Runs directly in the browser</li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" id="jquery">
+        <div class="panel-icon">💎</div>
+        <h2>jQuery — JavaScript Simplified</h2>
+        <p>jQuery is a lightweight library that simplifies JavaScript tasks. With jQuery, complex DOM operations, event handling, and Ajax calls become much easier to write.</p>
+        <ul>
+          <li>Simple CSS-like selectors: $(".class"), $("#id")</li>
+          <li>Built-in animations: fadeIn, slideToggle</li>
+          <li>Cross-browser compatible code</li>
+          <li>Method chaining for cleaner code</li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" id="ajax">
+        <div class="panel-icon">🔄</div>
+        <h2>Ajax — Asynchronous Requests</h2>
+        <p>Ajax allows web pages to communicate with a server in the background without reloading the page. This enables fast, dynamic content updates like live search and feeds.</p>
+        <ul>
+          <li>Fetches data without page refresh</li>
+          <li>Works with JSON, XML, plain text</li>
+          <li>jQuery makes Ajax calls very simple</li>
+          <li>Used in search, forms, live data feeds</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="Task4.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1 — Dynamic List Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Task1.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="lab-tag">Lab Task 01</span>
+      <h1>Dynamic List Manager</h1>
+      <p class="subtitle">Add items to the list and delete them with a click</p>
+    </header>
+
+    <div class="input-row">
+      <input type="text" id="itemInput" placeholder="Type an item..." autocomplete="off">
+      <button id="addBtn">+ Add</button>
+    </div>
+
+    <div class="list-wrapper">
+      <p class="empty-msg" id="emptyMsg">No items yet. Add something above!</p>
+      <ul id="myList"></ul>
+    </div>
+
+    <div class="counter" id="counter"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="Task1.js"></script>
+</body>
+</html>

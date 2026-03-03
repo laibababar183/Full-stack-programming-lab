@@ -1,0 +1,181 @@
+/* =============================================
+   Home Task 7 — Drag & Drop Sortable List
+   Task7.css
+   ============================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #0e0e16;
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 16px;
+}
+
+/* ---- Container ---- */
+.container {
+  width: 100%;
+  max-width: 580px;
+}
+
+/* ---- Header ---- */
+header {
+  margin-bottom: 20px;
+}
+
+.lab-tag {
+  display: inline-block;
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #00e5a0;
+  border: 1px solid #00e5a0;
+  padding: 4px 12px;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(26px, 5vw, 42px);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  font-weight: 300;
+}
+
+/* ---- Hint ---- */
+.hint {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  background: #161620;
+  border-radius: 7px;
+  border-left: 3px solid #00e5a0;
+}
+
+/* ---- Sortable List ---- */
+#sortableList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+/* ---- Each List Item ---- */
+.sort-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #1a1a28;
+  border: 1.5px solid #252535;
+  border-radius: 10px;
+  padding: 14px 18px;
+  cursor: default;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  user-select: none;
+}
+
+.sort-item:hover {
+  border-color: #00e5a0;
+  background: #1c1c2c;
+}
+
+/* ---- Drag Handle ---- */
+.drag-handle {
+  font-size: 18px;
+  color: #444;
+  cursor: grab;
+  transition: color 0.2s;
+  line-height: 1;
+}
+
+.sort-item:hover .drag-handle {
+  color: #00e5a0;
+}
+
+/* ---- Item Number Badge ---- */
+.item-num {
+  min-width: 28px;
+  height: 28px;
+  background: #252535;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  color: #00e5a0;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+/* ---- Item Label ---- */
+.item-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #d0d0e0;
+  flex: 1;
+}
+
+/* ---- While Being Dragged (jQuery UI adds these) ---- */
+.ui-sortable-helper {
+  background: #252540 !important;
+  border-color: #00e5a0 !important;
+  box-shadow: 0 8px 32px rgba(0, 229, 160, 0.25) !important;
+  transform: rotate(1.5deg) scale(1.02);
+  opacity: 0.95;
+}
+
+/* Placeholder where item will be dropped */
+.ui-sortable-placeholder {
+  background: rgba(0, 229, 160, 0.06) !important;
+  border: 1.5px dashed #00e5a0 !important;
+  border-radius: 10px !important;
+  visibility: visible !important;
+  height: 54px;
+}
+
+/* ---- Order Display ---- */
+.order-display {
+  background: #161620;
+  border: 1.5px solid #252535;
+  border-radius: 8px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.order-label {
+  color: #555;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+#orderOutput {
+  color: #00e5a0;
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
