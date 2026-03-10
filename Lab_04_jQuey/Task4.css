@@ -1,0 +1,145 @@
+/* =====================
+   Task 4 — Tabbed Content with Smooth Scroll
+   CSS File
+   ===================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #fafaf8;
+  color: #1a1a1a;
+  min-height: 100vh;
+  padding: 40px 16px 80px;
+}
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Header */
+header { margin-bottom: 36px; }
+
+.lab-tag {
+  display: inline-block;
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #6246ea;
+  border: 1px solid #6246ea;
+  padding: 4px 12px;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 5vw, 44px);
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.subtitle { font-size: 15px; color: #888; font-weight: 300; }
+
+/* Tab Navigation */
+.tab-nav {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  padding: 12px 20px;
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  letter-spacing: 0.3px;
+}
+
+.tab-btn:hover { color: #6246ea; }
+
+.tab-btn.active {
+  color: #6246ea;
+  border-bottom-color: #6246ea;
+}
+
+/* Content Area */
+#content-area {
+  margin-top: 2px;
+}
+
+.tab-panel {
+  display: none;
+  padding: 36px 0;
+  animation: fadeUp 0.35s ease;
+}
+
+.tab-panel.active { display: block; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Panel icon */
+.panel-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.tab-panel h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 14px;
+}
+
+.tab-panel p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.tab-panel ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tab-panel ul li {
+  padding: 12px 16px 12px 40px;
+  background: #f0eeff;
+  border-left: 3px solid #6246ea;
+  border-radius: 0 8px 8px 0;
+  font-size: 14px;
+  color: #333;
+  position: relative;
+}
+
+.tab-panel ul li::before {
+  content: "→";
+  position: absolute;
+  left: 14px;
+  color: #6246ea;
+  font-weight: 700;
+}

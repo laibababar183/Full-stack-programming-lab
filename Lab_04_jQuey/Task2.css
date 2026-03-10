@@ -1,0 +1,152 @@
+/* =====================
+   Task 2 — Animated Image Gallery
+   CSS File
+   ===================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #f5f0e8;
+  color: #1a1a1a;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 740px;
+}
+
+/* Header */
+header { margin-bottom: 32px; }
+
+.lab-tag {
+  display: inline-block;
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #2d5a27;
+  border: 1px solid #2d5a27;
+  padding: 4px 12px;
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 5vw, 44px);
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.subtitle { font-size: 15px; color: #888; font-weight: 300; }
+
+/* Gallery Frame */
+.gallery-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 700 / 420;
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.gallery-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;        /* jQuery will control visibility */
+  border-radius: 12px;
+}
+
+.gallery-img.active { display: block; }
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  font-size: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.arrow:active { transform: translateY(-50%) scale(0.94); }
+.arrow:hover  { background: rgba(255,255,255,0.3); }
+
+#prevBtn { left: 14px; }
+#nextBtn { right: 14px; }
+
+/* Counter Badge */
+.img-counter {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+/* Caption */
+.caption-bar {
+  background: #1a1a1a;
+  border-radius: 0 0 12px 12px;
+  padding: 16px 22px;
+  margin-top: -4px;
+}
+
+.caption-bar p {
+  color: #d0d0d0;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  min-height: 20px;
+  transition: opacity 0.3s;
+}
+
+/* Dots */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c0b49a;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dot.active {
+  background: #2d5a27;
+  transform: scale(1.3);
+}

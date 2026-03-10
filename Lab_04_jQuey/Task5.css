@@ -1,0 +1,163 @@
+/* =============================================
+   Home Task 5 — Chained Style Editor
+   Task5.css
+   ============================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #111118;
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 16px;
+}
+
+/* ---- Container ---- */
+.container {
+  width: 100%;
+  max-width: 640px;
+}
+
+/* ---- Header ---- */
+header {
+  margin-bottom: 32px;
+}
+
+.lab-tag {
+  display: inline-block;
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #f5c542;
+  border: 1px solid #f5c542;
+  padding: 4px 12px;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(26px, 5vw, 42px);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #777;
+  font-weight: 300;
+}
+
+/* ---- Text Card ---- */
+.text-card {
+  background: #1e1e2e;
+  border: 1.5px solid #2a2a3a;
+  border-radius: 12px;
+  padding: 32px 28px;
+  margin-bottom: 28px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+/* The text being styled */
+#styledText {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #e0e0e0;
+  transition: all 0.35s ease;   /* Smooth style transitions */
+}
+
+/* jQuery adds these helper classes */
+#styledText.is-bold        { font-weight: 700 !important; }
+#styledText.is-italic      { font-style: italic !important; }
+#styledText.is-underline   { text-decoration: underline !important; }
+#styledText.is-shadow      { text-shadow: 2px 2px 8px rgba(0,0,0,0.6) !important; }
+
+/* ---- Controls ---- */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.group-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ---- Control Buttons ---- */
+.ctrl-btn {
+  background: #1e1e2e;
+  border: 1.5px solid #2a2a3a;
+  color: #ccc;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 9px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ctrl-btn:hover {
+  border-color: #f5c542;
+  color: #fff;
+}
+
+/* Active state for toggle buttons */
+.toggle-btn.active {
+  background: #f5c542;
+  border-color: #f5c542;
+  color: #111;
+  font-weight: 700;
+}
+
+/* ---- Reset Button ---- */
+#resetBtn {
+  width: 100%;
+  background: transparent;
+  border: 1.5px solid #2a2a3a;
+  color: #888;
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+}
+
+#resetBtn:hover {
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}

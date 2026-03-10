@@ -1,0 +1,180 @@
+/* =====================
+   Task 3 — Form Validation
+   CSS File
+   ===================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 40px 36px;
+  backdrop-filter: blur(10px);
+}
+
+/* Header */
+header { margin-bottom: 32px; }
+
+.lab-tag {
+  display: inline-block;
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #e94560;
+  border: 1px solid #e94560;
+  padding: 4px 12px;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.subtitle { font-size: 14px; color: #8899aa; }
+
+/* Fields */
+.field-group {
+  margin-bottom: 22px;
+  position: relative;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #aab;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+input {
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  color: #f0f0f0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  padding: 13px 16px;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.25s, background 0.25s;
+}
+
+input::placeholder { color: #445; }
+
+input:focus {
+  border-color: rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.09);
+}
+
+/* Valid state */
+input.valid {
+  border-color: #3ddc84;
+  background: rgba(61,220,132,0.06);
+}
+
+/* Error state */
+input.error {
+  border-color: #e94560;
+  background: rgba(233,69,96,0.06);
+}
+
+.error-msg {
+  display: none;
+  font-size: 12px;
+  color: #e94560;
+  margin-top: 6px;
+  padding-left: 2px;
+}
+
+/* Submit button */
+#submitBtn {
+  width: 100%;
+  background: #e94560;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+#submitBtn:hover  { background: #c73652; }
+#submitBtn:active { transform: scale(0.98); }
+
+/* Success Box */
+.success-box {
+  display: none;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.success-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #3ddc84;
+  color: #fff;
+  font-size: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  animation: popIn 0.4s ease;
+}
+
+@keyframes popIn {
+  0%   { transform: scale(0); opacity: 0; }
+  70%  { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.success-box h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.success-box p { color: #8899aa; font-size: 14px; margin-bottom: 24px; }
+
+#resetBtn {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  padding: 10px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+#resetBtn:hover { border-color: #e94560; }

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 7 — Drag & Drop Sortable List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Task7.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <span class="lab-tag">Home Task 07</span>
+      <h1>Drag & Drop List</h1>
+      <p class="subtitle">Drag items to reorder — order updates dynamically</p>
+    </header>
+
+    <p class="hint">☰ Grab any item by its handle and drag it to a new position</p>
+
+    <!-- Sortable List -->
+    <ul id="sortableList">
+      <li class="sort-item" data-id="1">
+        <span class="drag-handle">⠿</span>
+        <span class="item-num">1</span>
+        <span class="item-label">🔴 HTML — Structure of the Web</span>
+      </li>
+      <li class="sort-item" data-id="2">
+        <span class="drag-handle">⠿</span>
+        <span class="item-num">2</span>
+        <span class="item-label">🎨 CSS — Styling & Layout</span>
+      </li>
+      <li class="sort-item" data-id="3">
+        <span class="drag-handle">⠿</span>
+        <span class="item-num">3</span>
+        <span class="item-label">⚡ JavaScript — Interactivity</span>
+      </li>
+      <li class="sort-item" data-id="4">
+        <span class="drag-handle">⠿</span>
+        <span class="item-num">4</span>
+        <span class="item-label">💎 jQuery — Simplified JS</span>
+      </li>
+      <li class="sort-item" data-id="5">
+        <span class="drag-handle">⠿</span>
+        <span class="item-num">5</span>
+        <span class="item-label">🔄 Ajax — Server Communication</span>
+      </li>
+      <li class="sort-item" data-id="6">
+        <span class="drag-handle">⠿</span>
+        <span class="item-num">6</span>
+        <span class="item-label">⚛️ React — UI Components</span>
+      </li>
+    </ul>
+
+    <!-- Order Output -->
+    <div class="order-display">
+      <span class="order-label">Current Order:</span>
+      <span id="orderOutput">1, 2, 3, 4, 5, 6</span>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- jQuery UI — sortable plugin ke liye zaroori hai -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script src="Task7.js"></script>
+</body>
+</html>

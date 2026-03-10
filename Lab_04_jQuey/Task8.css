@@ -1,0 +1,351 @@
+/* =============================================
+   Home Task 8 — Quiz Game
+   Task8.css
+   ============================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: radial-gradient(ellipse at top, #1a0533 0%, #0d0d0d 70%);
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 16px;
+}
+
+/* ---- Container ---- */
+.container {
+  width: 100%;
+  max-width: 580px;
+}
+
+/* ---- Each Screen ---- */
+.screen {
+  width: 100%;
+}
+
+/* =====================
+   START SCREEN
+   ===================== */
+
+#startScreen {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.lab-tag {
+  display: inline-block;
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c084fc;
+  border: 1px solid #c084fc;
+  padding: 4px 12px;
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+
+.start-icon {
+  font-size: 64px;
+  margin-bottom: 18px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(34px, 6vw, 54px);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #888;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+/* =====================
+   PRIMARY BUTTON
+   ===================== */
+
+.primary-btn {
+  background: linear-gradient(135deg, #9333ea, #c084fc);
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(147, 51, 234, 0.4);
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(147, 51, 234, 0.55);
+}
+
+.primary-btn:active {
+  transform: scale(0.97);
+}
+
+/* =====================
+   QUIZ SCREEN
+   ===================== */
+
+/* Progress Bar */
+.progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: #2a2a2a;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #9333ea, #c084fc);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+
+.progress-text {
+  font-size: 13px;
+  color: #666;
+  white-space: nowrap;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+}
+
+/* Question Card */
+.question-card {
+  background: #1a1a1a;
+  border: 1.5px solid #2a2a2a;
+  border-radius: 14px;
+  padding: 28px 24px;
+  margin-bottom: 20px;
+}
+
+.q-number {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #9333ea;
+  margin-bottom: 12px;
+}
+
+.question-text {
+  font-size: 17px;
+  font-weight: 500;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+/* Options Grid */
+.options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+/* Each Option Button */
+.option-btn {
+  width: 100%;
+  background: #1a1a1a;
+  border: 1.5px solid #2a2a2a;
+  color: #d0d0d0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 14px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.option-btn:hover:not(:disabled) {
+  border-color: #9333ea;
+  background: #1e1a2a;
+  color: #fff;
+}
+
+/* Option letter badge (A, B, C, D) */
+.opt-letter {
+  min-width: 28px;
+  height: 28px;
+  background: #252525;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  color: #888;
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Correct answer — green */
+.option-btn.correct {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: #22c55e;
+  color: #22c55e;
+}
+
+.option-btn.correct .opt-letter {
+  background: #22c55e;
+  color: #fff;
+}
+
+/* Wrong answer — red */
+.option-btn.wrong {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.option-btn.wrong .opt-letter {
+  background: #ef4444;
+  color: #fff;
+}
+
+/* Disabled after answering */
+.option-btn:disabled {
+  cursor: default;
+}
+
+/* Feedback message */
+.feedback {
+  font-size: 14px;
+  font-weight: 500;
+  min-height: 20px;
+  margin-bottom: 16px;
+  padding-left: 4px;
+}
+
+.feedback.correct-fb { color: #22c55e; }
+.feedback.wrong-fb   { color: #ef4444; }
+
+/* =====================
+   RESULT SCREEN
+   ===================== */
+
+#resultScreen {
+  text-align: center;
+  padding: 10px 0;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Score Ring */
+.score-ring {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 5px solid #9333ea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  background: rgba(147, 51, 234, 0.1);
+  animation: popIn 0.5s ease;
+}
+
+@keyframes popIn {
+  0%   { transform: scale(0); opacity: 0; }
+  70%  { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+#scoreText {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #c084fc;
+}
+
+#resultTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+#resultMsg {
+  font-size: 15px;
+  color: #888;
+  margin-bottom: 24px;
+}
+
+/* Result Stats */
+.result-stats {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: #1a1a1a;
+  border: 1.5px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 14px 22px;
+  min-width: 100px;
+}
+
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.stat-box.correct-stat .stat-num { color: #22c55e; }
+.stat-box.wrong-stat   .stat-num { color: #ef4444; }
+.stat-box.pct-stat     .stat-num { color: #c084fc; }

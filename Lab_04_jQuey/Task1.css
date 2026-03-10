@@ -1,0 +1,174 @@
+/* =====================
+   Task 1 — Dynamic List Manager
+   CSS File
+   ===================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #0d0d0d;
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 560px;
+}
+
+/* Header */
+header {
+  margin-bottom: 36px;
+}
+
+.lab-tag {
+  display: inline-block;
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ff6b35;
+  border: 1px solid #ff6b35;
+  padding: 4px 12px;
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 5vw, 44px);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #888;
+  font-weight: 300;
+}
+
+/* Input Row */
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+#itemInput {
+  flex: 1;
+  background: #1a1a1a;
+  border: 1.5px solid #2a2a2a;
+  color: #f0f0f0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  padding: 14px 18px;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#itemInput:focus {
+  border-color: #ff6b35;
+}
+
+#itemInput::placeholder { color: #444; }
+
+#addBtn {
+  background: #ff6b35;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+#addBtn:hover { background: #e85d2a; }
+#addBtn:active { transform: scale(0.97); }
+
+/* List */
+.list-wrapper {
+  min-height: 100px;
+}
+
+.empty-msg {
+  color: #444;
+  font-size: 14px;
+  text-align: center;
+  padding: 40px 0;
+  border: 1.5px dashed #222;
+  border-radius: 8px;
+}
+
+#myList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#myList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1a1a1a;
+  border: 1.5px solid #2a2a2a;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.2s, background 0.2s;
+  animation: slideIn 0.25s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+#myList li:hover {
+  border-color: #ff6b35;
+  background: #1e1e1e;
+}
+
+.item-text { flex: 1; }
+
+.delete-btn {
+  background: transparent;
+  border: 1px solid #333;
+  color: #888;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+
+.delete-btn:hover {
+  background: #ff4444;
+  border-color: #ff4444;
+  color: #fff;
+}
+
+/* Counter */
+.counter {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #555;
+  text-align: right;
+  font-weight: 300;
+}

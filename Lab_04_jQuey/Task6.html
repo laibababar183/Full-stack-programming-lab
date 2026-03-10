@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 6 — API Data Fetcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Task6.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <span class="lab-tag">Home Task 06</span>
+      <h1>API Data Fetcher</h1>
+      <p class="subtitle">Fetching live posts from JSONPlaceholder API using Ajax</p>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <span id="loadedCount">0 posts loaded</span>
+      <span id="loadingIndicator" class="loading-dot" style="display:none;">● Fetching...</span>
+    </div>
+
+    <!-- Posts List -->
+    <div id="postsList"></div>
+
+    <!-- Empty State (shown before first load) -->
+    <div id="emptyState" class="empty-state">
+      <div class="empty-icon">📡</div>
+      <p>Click the button below to fetch posts from the API</p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="btn-group">
+      <button id="loadBtn">Load Posts</button>
+      <button id="loadMoreBtn" style="display:none;">Load More</button>
+      <button id="clearBtn"    style="display:none;">Clear All</button>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="Task6.js"></script>
+</body>
+</html>

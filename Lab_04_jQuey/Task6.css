@@ -1,0 +1,229 @@
+/* =============================================
+   Home Task 6 — API Data Fetcher
+   Task6.css
+   ============================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #f0f4ff;
+  color: #1a1a2e;
+  min-height: 100vh;
+  padding: 40px 16px 80px;
+}
+
+/* ---- Container ---- */
+.container {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ---- Header ---- */
+header {
+  margin-bottom: 28px;
+}
+
+.lab-tag {
+  display: inline-block;
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #3a56e8;
+  border: 1px solid #3a56e8;
+  padding: 4px 12px;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(26px, 5vw, 42px);
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #778;
+  font-weight: 300;
+}
+
+/* ---- Stats Bar ---- */
+.stats-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: #889;
+  font-weight: 500;
+}
+
+.loading-dot {
+  color: #3a56e8;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ---- Posts List ---- */
+#postsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Single Post Card */
+.post-card {
+  background: #ffffff;
+  border: 1.5px solid #e0e6ff;
+  border-radius: 10px;
+  padding: 18px 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  animation: slideIn 0.3s ease;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.post-card:hover {
+  border-color: #3a56e8;
+  box-shadow: 0 4px 16px rgba(58, 86, 232, 0.1);
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Post Number Badge */
+.post-num {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: #f0f4ff;
+  border: 1.5px solid #e0e6ff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  color: #3a56e8;
+}
+
+.post-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.post-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+  line-height: 1.4;
+  text-transform: capitalize;
+}
+
+.post-content {
+  font-size: 13px;
+  color: #778;
+  line-height: 1.6;
+}
+
+/* ---- Empty State ---- */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  border: 1.5px dashed #c0caee;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 14px;
+}
+
+.empty-state p {
+  font-size: 14px;
+  color: #99a;
+}
+
+/* ---- Button Group ---- */
+.btn-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Load Button */
+#loadBtn {
+  background: #3a56e8;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  letter-spacing: 0.3px;
+}
+
+#loadBtn:hover  { background: #2a44d0; }
+#loadBtn:active { transform: scale(0.97); }
+
+/* Load More Button */
+#loadMoreBtn {
+  background: transparent;
+  color: #3a56e8;
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1.5px solid #3a56e8;
+  padding: 13px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#loadMoreBtn:hover {
+  background: #3a56e8;
+  color: #fff;
+}
+
+/* Clear Button */
+#clearBtn {
+  background: transparent;
+  color: #cc3333;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  border: 1.5px solid #cc3333;
+  padding: 13px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#clearBtn:hover {
+  background: #cc3333;
+  color: #fff;
+}
