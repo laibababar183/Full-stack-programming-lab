@@ -34,9 +34,15 @@ router.get('/:id', protect, async (req, res) => {
   }
 });
 
-// POST /api/customers — Naya customer add karo
 router.post('/', protect, async (req, res) => {
   try {
+    const { name, email, phone } = req.body;
+    
+    // Validation
+    if (!name || !email || !phone) {
+      return res.status(400).json({ message: 'Name, Email and Phone are required!' });
+    }
+    
     const customer = await Customer.create(req.body);
     res.status(201).json(customer);
   } catch (err) {
